@@ -1,160 +1,207 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<title>theyluvlss.com</title>
-<!-- Website Icon -->
-<link rel="icon" type="image/png" href="https://i.imghippo.com/files/dQz5906Ok.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>theyluvlss.com</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Georgia;
-    background: #e0d38d;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+  <!-- Website Icon -->
+  <link rel="icon" type="image/png" href="https://i.imghippo.com/files/dQz5906Ok.png">
 
-/* Header with video background */
-header {
-    position: relative;
-    height: 400px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-}
+  <style>
+    /* BODY */
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #e0d38d;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-#hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
+    /* HEADER WITH DARK AGGRESSIVE OCEAN GRADIENT */
+    header.hero {
+      height: 400px;
+      background: linear-gradient(-45deg, #001f3f, #003366, #004080, #001a33);
+      background-size: 600% 600%;
+      animation: gradientMove 6s ease infinite;
 
-.header-content {
-    position: relative;
-    z-index: 1; /* Makes text appear above video */
-}
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
 
-/* Header text style */
-header h1, header p {
-    color: white;                  
-    font-style: italic;            
-    text-transform: uppercase;     
-    font-family: 'Arial', sans-serif; 
-    letter-spacing: 2px;           
-}
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
 
-/* Navigation bar */
-nav {
-    background: Gray;
-    text-align: center;
-    padding: 10px;
-}
+      25% {
+        background-position: 100% 30%;
+      }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 15px;
-    font-weight: bold;
-}
+      50% {
+        background-position: 50% 70%;
+      }
 
-/* Main content */
-main {
-    flex: 1;
-    text-align: center;
-    padding: 40px;
-}
+      75% {
+        background-position: 100% 50%;
+      }
 
-/* Buttons */
-button {
-    padding: 12px 25px;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    background: #333;
-    color: black;
-    cursor: pointer;
-}
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-button:hover {
-    background: #555;
-}
+    /* LOGO */
+    header.hero .logo {
+      font-family: Georgia, serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 3px solid white;
+      display: inline-block;
+      padding-bottom: 10px;
+      font-size: 40px;
+    }
 
-/* Footer */
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
+    /* ROBOTICS COLLECTION BLACK */
+    header.hero .collection {
+      letter-spacing: 2px;
+      margin-top: 15px;
+      font-size: 20px;
+      color: black;
+    }
 
-footer a {
-    color: #ddd;
-    margin: 10px;
-    text-decoration: none;
-}
+    /* NAVBAR */
+    nav {
+      background: gray;
+      text-align: center;
+      padding: 15px;
+    }
 
-footer a:hover {
-    color: white;
-}
-</style>
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      position: relative;
+      transition: 0.3s;
+    }
 
+    nav a:hover {
+      color: white;
+      text-shadow:
+        0 0 5px white,
+        0 0 10px white,
+        0 0 20px white,
+        0 0 40px #bbbbbb;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: white;
+      transition: 0.4s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* MAIN CONTENT */
+    main {
+      flex: 1;
+      text-align: center;
+      padding: 40px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background: #333;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #555;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #ddd;
+      margin: 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <video autoplay muted loop playsinline id="hero-video">
-    <source src="Shirt_Showcase(1).mp4" type="video/mp4">
-  </video>
-  <div class="header-content">
-    <h1 style="color:white; font-family:Georgia, serif; text-transform:uppercase; letter-spacing:2px; border-bottom:3px solid white; display:inline-block; padding-bottom:10px;">
-      Lifestyle LSS
-    </h1>
-    <p style="color:Black; font-family:Georgia; text-transform:uppercase; letter-spacing:2px; margin-top:15px;">
-      ROBOTICS COLLECTION
-    </p>
-  </div>
-</header>
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="header-content">
+      <h1 class="logo">Lifestyle LSS</h1>
+      <p class="collection">ROBOTICS COLLECTION</p>
+    </div>
+  </header>
 
-<nav>
-  <a href="#"></a>
-  <a href="#">Releases</a>
-  <a href="aboutpage.html">About</a>
-</nav>
+  <!-- NAVBAR -->
+  <nav>
+    
+    <a href="#">Releases</a>
+    <a href="aboutpage.html">About</a>
+  </nav>
 
-<main>
-  <h2>USA</h2>
-  <p> Est .2019 </p>
-  <p>Envying Modern Luxury.</p>
+  <!-- MAIN CONTENT -->
+  <main>
+    <h2>USA</h2>
+    <p>Est. 2019</p>
+    <p>Envying Modern Luxury.</p>
 
-  <br>
+    <br>
 
-  <a href="https://trapcat1440.github.io/VoyagerTheGame/">
-    <button>Play Voyagers TheGame</button>
-  </a>
+    <a href="https://trapcat1440.github.io/VoyagerTheGame/">
+      <button>Play Voyagers TheGame</button>
+    </a>
 
-  <br><br>
+    <br><br>
 
-  <a href="https://lesterdabeast.github.io/robotics-lss-magazine/">
-    <button>LSS SS26 Magazine</button>
-  </a>
-</main>
+    <a href="https://lesterdabeast.github.io/robotics-lss-magazine/">
+      <button>LSS SS26 Magazine</button>
+    </a>
+  </main>
 
-<footer>
-  <h3>Connect With Us</h3>
-  <a href="https://www.linkedin.com/in/apparellss/">LinkedIn</a> |
-  <a href="https://www.instagram.com/only_lss/p/COoykH4pbSQ/">Instagram</a> |
-  <a href="https://www.reddit.com/user/LSStrademark/">Reddit</a>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <h3>Connect With Us</h3>
+    <a href="https://www.linkedin.com/in/apparellss/">LinkedIn</a> |
+    <a href="https://www.instagram.com/only_lss/p/COoykH4pbSQ/">Instagram</a> |
+    <a href="https://www.reddit.com/user/LSStrademark/">Reddit</a>
+  </footer>
 
 </body>
+
 </html>
