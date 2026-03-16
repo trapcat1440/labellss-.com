@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Previous Releases | LSS</title>
+<link rel="icon" type="image/png" href="https://i.imghippo.com/files/dQz5906Ok.png">
+
+<style>
+  body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* FULL-WIDTH HEADER */
+  header {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 40px 20px;
+  }
+
+  #visitor-tracker {
+    font-size: 16px;
+    color: #111;
+    font-weight: bold;
+    background: rgba(0,0,0,0.05);
+    padding: 8px 15px;
+    border-radius: 10px;
+    min-width: 220px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    height: 24px;
+    position: absolute;
+    left: 20px; /* pinned to left */
+  }
+
+  #visitor-text {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+  }
+
+  header img {
+    max-height: 150px;
+    display:block;
+  }
+
+  /* SLIDESHOW */
+  .slideshow-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    padding: 40px 0;
+  }
+
+  .slides-inner {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    scroll-behavior: smooth;
+    position: relative;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    position: relative;
+    height: 600px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 18px;
+    border-radius: 5px;
+  }
+
+  /* Counter */
+  .counter {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 10;
+  }
+
+  /* Navigation Arrows */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+    transition: 0.3s, box-shadow 0.3s;
+  }
+
+  .arrow:hover {
+    color: #00ffff;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 25px 8px rgba(0,255,255,0.7);
+  }
+
+  .arrow-left { left: 10px; }
+  .arrow-right { right: 10px; }
+
+  /* Hide scrollbar */
+  .slides-inner::-webkit-scrollbar { display: none; }
+  .slides-inner { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* FOOTER */
+  footer {
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    background: #111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  footer button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #fff;
+    color: #111;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  footer button:hover {
+    background: #ddd;
+    color: #000;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div id="visitor-tracker">
+    <span id="visitor-text">Loading...</span>
+  </div>
+  <img src="https://i.imghippo.com/files/dQz5906Ok.png" alt="LSS Logo">
+</header>
+
+<!-- SLIDESHOW -->
+<div class="slideshow-wrapper">
+  <div class="counter" id="counter">1 / 7</div>
+  <div class="arrow arrow-left" id="prev">&#10094;</div>
+  <div class="arrow arrow-right" id="next">&#10095;</div>
+
+  <div class="slides-inner" id="slidesInner">
+    <div class="slide" style="background-image: url('https://i.imghippo.com/files/Vki5504TMA.png');">
+      <div class="caption">Est 2019</div>
+    </div>
+    <div class="slide" style="background-image: url('https://i.imghippo.com/files/Yn8522aBU.png');">
+      <div class="caption">Summer '20 - LSS Splatter Fabric</div>
+    </div>
+    <div class="slide" style="background-image: url('https://i.imghippo.com/files/GaXC4695oVA.jpg');">
+      <div class="caption">Summer '20 - LSS Splatter Fabric</div>
+    </div>
+    <div class="slide" style="background-image: url('https://i.imghippo.com/files/oZI5810a.jpg');">
+      <div class="caption">Winter 2021 – Last Sinners Serving Collection</div>
+    </div>
+    <div class="slide" style="background-image: url('https://i.imghippo.com/files/bGd3746Usk.png');">
+      <div class="caption">Winter 2022 - Pre-Liahona Collection Fabrics</div>
+    </div>
+    <div class="slide" style="background-image: url('https://i.imghippo.com/files/gRpY8282ds.png');">
+      <div class="caption">Winter 2024 - LSS and Label LSS Chrome Logo</div>
+    </div>
+    <div class="slide" style="background-image: url('https://i.imghippo.com/files/goW4946DNI.png');">
+      <div class="caption">Spring 2026 - Robotics Collection Started</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <h2>Previous Releases</h2>
+  <button onclick="window.history.back()">Go Back</button>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+  // Animated Fake Visitor Tracker
+  const boysNames = ["Guest"];
+  const girlsNames = ["Guest"];
+  const countries = ["USA", "Canada", "UK", "Germany", "Japan", "Brazil","France","South Korea","Argentina"];
+  const visitorText = document.getElementById('visitor-text');
+
+  function getRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+  function updateFakeVisitors() {
+    const gender = Math.random() < 0.5 ? "boy" : "girl";
+    const name = gender === "boy" ? getRandom(boysNames) : getRandom(girlsNames);
+    const country = getRandom(countries);
+
+    visitorText.style.opacity = 0;
+    setTimeout(() => {
+      visitorText.textContent = `${name} (${gender}) from ${country} is browsing LSS now`;
+      visitorText.style.opacity = 1;
+    }, 700);
+  }
+
+  setInterval(updateFakeVisitors, 3000);
+  updateFakeVisitors();
+
+  // Slideshow functionality
+  const slidesInner = document.getElementById('slidesInner');
+  const slides = slidesInner.querySelectorAll('.slide');
+  const counter = document.getElementById('counter');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+
+  slidesInner.addEventListener('scroll', () => {
+    const slideWidth = slides[0].offsetWidth + 20;
+    const index = Math.round(slidesInner.scrollLeft / slideWidth);
+    counter.textContent = `${index + 1} / ${slides.length}`;
+  });
+
+  prev.addEventListener('click', () => {
+    const slideWidth = slides[0].offsetWidth + 20;
+    slidesInner.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+  });
+
+  next.addEventListener('click', () => {
+    const slideWidth = slides[0].offsetWidth + 20;
+    slidesInner.scrollBy({ left: slideWidth, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
