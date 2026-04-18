@@ -1,42 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>LSS - About</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theyluvlss About</title>
   <link rel="icon" type="image/png" href="https://i.imghippo.com/files/dQz5906Ok.png">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: white;
+      font-family: 'Arial', Helvetica, sans-serif;
+      background: #f0f0f0;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      color: #333;
     }
 
     /* Header */
     header {
-      background: teal;
-      height: 200px;
+      background: linear-gradient(to right, #2c3e50, #34495e);
+      height: 300px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       color: white;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Logo styling */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+      margin-right: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.1);
     }
 
     header h1 {
-      font-family: Georgia, serif;
+      font-family: 'Georgia', serif;
       font-style: italic;
       text-transform: uppercase;
       font-size: 48px;
       margin: 0;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
+    /* Shining Text Animation */
+    .shine {
+      position: relative;
+      display: inline-block;
+      color: #fff;
+      font-size: 48px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      animation: shine 3s linear infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        text-shadow: 
+          0 0 3px rgba(255, 255, 255, 0.5),
+          0 0 5px rgba(255, 255, 255, 0.5),
+          0 0 7px rgba(255, 255, 255, 0.5),
+          0 0 10px rgba(255, 255, 255, 0.7),
+          0 0 20px rgba(255, 255, 255, 0.7),
+          0 0 30px rgba(255, 255, 255, 0.7);
+      }
+      50% {
+        text-shadow: 
+          0 0 5px rgba(255, 255, 255, 0.8),
+          0 0 10px rgba(255, 255, 255, 0.8),
+          0 0 20px rgba(255, 255, 255, 0.8),
+          0 0 30px rgba(255, 255, 255, 0.9),
+          0 0 40px rgba(255, 255, 255, 0.9),
+          0 0 50px rgba(255, 255, 255, 1);
+      }
+      100% {
+        text-shadow: 
+          0 0 3px rgba(255, 255, 255, 0.5),
+          0 0 5px rgba(255, 255, 255, 0.5),
+          0 0 7px rgba(255, 255, 255, 0.5),
+          0 0 10px rgba(255, 255, 255, 0.7),
+          0 0 20px rgba(255, 255, 255, 0.7),
+          0 0 30px rgba(255, 255, 255, 0.7);
+      }
     }
 
     /* Main content */
@@ -44,27 +107,40 @@
       flex: 1;
       text-align: center;
       padding: 40px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 1000px;
     }
 
     main h2 {
-      font-size: 32px;
+      font-size: 36px;
       margin-bottom: 20px;
+      font-weight: 600;
+      color: #2c3e50;
     }
 
     main p {
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto 30px auto;
       font-size: 18px;
-      line-height: 1.6;
+      line-height: 1.8;
+      color: #555;
     }
 
-    /* Images */
+    /* Product images */
     .product-image {
       width: 300px;
       margin: 15px;
-      border: 3px solid #cdbf72;
-      border-radius: 10px;
-      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
     /* Buttons */
@@ -73,34 +149,60 @@
       padding: 12px 25px;
       font-size: 16px;
       border: none;
-      border-radius: 6px;
-      background: #333;
+      border-radius: 50px;
+      background: #34495e;
       color: white;
       cursor: pointer;
       text-decoration: none;
       margin-top: 30px;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
 
     .back-button:hover {
-      background: #555;
+      background: #2c3e50;
+      transform: translateY(-3px);
     }
 
     /* Footer */
     footer {
-      background: #333;
+      background: #34495e;
       color: white;
       text-align: center;
       padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
     }
 
     footer a {
       color: #ddd;
       margin: 10px;
       text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
     }
 
     footer a:hover {
       color: white;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 36px;
+      }
+
+      main h2 {
+        font-size: 28px;
+      }
+
+      main p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .product-image {
+        width: 90%;
+      }
     }
   </style>
 </head>
@@ -108,57 +210,29 @@
 <body>
 
   <header>
-    <div>
-      <h1>
-          <img src="https://i.imghippo.com/files/gRpY8282ds.png" weight = "100"height="100">
-          <p>
-              Envy Modern Luxury
-          </p>
-          </h1>
+    <div class="logo-container">
+      <img src="https://i.imghippo.com/files/gRpY8282ds.png" alt="Logo">
+      <h1 class="shine">Envy Modern Luxury</h1>
     </div>
+    <p>Your exclusive lifestyle brand</p>
   </header>
 
   <main>
-    <h2>
-        Our Story 
-    </h2>
+    <h2>Our Story</h2>
     <p>
-      Lifestyle LSS Envy Modern Luxury  started in 2019 , focusing on casual wear with heavy "LSS" designs and patterns. LSS Collection and the collection fabrics , duffel Wooly bagss and silver zipper outwear. Label LSS is Label Associated is CL and the website is theyluvlss.com
+      Acquiring a piece of label LSS is a sense of relief to new designer collectors. The LSS collection appeared in the US, making a debut for Last Sinners Serving™, reaching a milestone of 1,000 audience members.
     </p>
 
-
-    <!-- Example product images -->
-    <img src="https://i.imghippo.com/files/BDM9940P.jpg" alt="Product 1" class="product-image">
-    <h3>
-         Visuals 
-    </h3>
+    <img src="https://i.imghippo.com/files/BDM9940P.jpg" alt="Carrie™ Collection" class="product-image">
+    <h3>The Appearance Of Our Label</h3>
     <p>
-        Lifestyle LSS started as a comfort name for casual wear. Our team and passionate designers have extended their potential to ensure a mass foundation to go above just casual wear. LSS  is recognized by the influence of italian and american haute brands.
-    </p>
-    
-    <img src="https://i.imghippo.com/files/xTZ5092ohY.png" alt="Product 2" class="product-image">
-    <h4>
-        Our Endavours 
-    </h4>
-    <P>
-        Continuing a persona as sets of clothing pieces to construct style , merge with coutre brands and setting a foundational pivot for italian and american influence.
-        
-    </P>
-    <img src="https://i.imghippo.com/files/SEr5028rM.png" alt="Product 3" class="product-image">
-    <p>
-        Legal Counsel Contact help-lssassociated@labelss.com
+      Our persona lives through our collections, releasing items such as Carrie™, our infamous blank, and Laggiso™, a heavy-duty case. Carrie™ was featured in the Last Sinners Serving Collection.
     </p>
 
-    <br>
-    <a href="https://trapcat1440.github.io/labellss-.com/" class="back-button">Back to Home</a>
-  </main>
-
-  <footer>
-    <h3>Connect With Us</h3>
-    <a href="https://www.linkedin.com/in/apparellss/">LinkedIn</a> |
-    <a href="https://www.instagram.com/only_lss/p/COoykH4pbSQ/">Instagram</a> |
-    <a href="https://www.reddit.com/user/LSStrademark/">Reddit</a>
-  </footer>
-
-</body>
-</html>
+    <img src="https://i.imghippo.com/files/xTZ5092ohY.png" alt="Laggiso™ Case" class="product-image">
+    <h4>Our Endeavors</h4>
+    <p>
+      We are constantly evolving our brand and envision new paths, including expanding our collections
+      <footer>
+  <a href="https://www.linkedin.com/in/apparellss/?skipRedirect=true" target="_blank">Apply here</a>
+</footer>
