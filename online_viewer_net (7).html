@@ -1,222 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>premioenvylss.it</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Website Icon -->
-  <link rel="icon" type="image/png" href="https://i.imghippo.com/files/dQz5906Ok.png">
+<title>LSS — Cinematic Jungle System</title>
 
-  <style>
-    /* BODY */
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background: #754A52;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASE CINEMATIC LAYER
+========================= */
+
+body {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #fff;
+    background-image: url('https://i.imghippo.com/files/sHp8146coA.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* DARK CINEMATIC OVERLAY */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0,0,0,0.35), rgba(0,0,0,0.85));
+    pointer-events: none;
+}
+
+/* =========================
+   CINEMATIC FADE IN
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-    /* HEADER WITH DARK AGGRESSIVE OCEAN GRADIENT */
-    header.hero {
-      height: 400px;
-      background: linear-gradient(-45deg, #001f3f, #003366, #004080, #001a33);
-      background-size: 600% 600%;
-      animation: gradientMove 6s ease infinite;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
-    @keyframes gradientMove {
-      0% {
-        background-position: 0% 50%;
-      }
+.fade {
+    animation: fadeUp 1.2s ease forwards;
+    opacity: 0;
+}
 
-      25% {
-        background-position: 100% 30%;
-      }
+/* =========================
+   TOP SIGNAL BAR (MOVING)
+========================= */
 
-      50% {
-        background-position: 50% 70%;
-      }
+@keyframes scrollLeft {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
 
-      75% {
-        background-position: 100% 50%;
-      }
+.signal {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    z-index: 10;
+}
 
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+.signal span {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollLeft 18s linear infinite;
+    opacity: 0.8;
+}
 
-    /* LOGO */
-    header.hero .logo {
-      font-family: Georgia, serif;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      border-bottom: 3px solid white;
-      display: inline-block;
-      padding-bottom: 10px;
-      font-size: 40px;
-    }
+/* =========================
+   NAV (FLOATING MINIMAL)
+========================= */
 
-    /* ROBOTICS COLLECTION BLACK */
-    header.hero .collection {
-      letter-spacing: 2px;
-      margin-top: 15px;
-      font-size: 20px;
-      color: red;
-    }
+nav {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 35px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    z-index: 10;
+}
 
-    /* NAVBAR */
-    nav {
-      background: #27EEF5;
-      text-align: center;
-      padding: 01px;
-    }
+nav a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: 0.4s;
+}
 
-    nav a {
-      color: black;
-      text-decoration: none;
-      margin: 20px;
-      font-weight: italic;
-      font-size: 18px;
-      position: relative;
-      transition: 0.3s;
-    }
+nav a:hover {
+    opacity: 1;
+}
 
-    nav a:hover {
-      color: white;
-      text-shadow:
-        0 0 5px white,
-        0 0 10px white,
-        0 0 20px white,
-        0 0 40px #bbbbbb;
-    }
+/* =========================
+   HERO CINEMATIC
+========================= */
 
-    nav a::after {
-      content: "";
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      left: 0;
-      bottom: -5px;
-      background: white;
-      transition: 0.4s;
-    }
+.hero {
+    text-align: center;
+    padding: 200px 20px 60px;
+}
 
-    nav a:hover::after {
-      width: 100%;
-    }
+.hero h1 {
+    font-size: clamp(48px, 8vw, 110px);
+    letter-spacing: 8px;
+    font-weight: 500;
+    animation: fadeUp 1.5s ease forwards;
+}
 
-    /* MAIN CONTENT */
-    main {
-      flex: 1;
-      text-align: center;
-      padding: 40px;
-    }
+.hero p {
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    text-transform: uppercase;
+    animation: fadeUp 1.8s ease forwards;
+}
 
-    button {
-      padding: 12px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      background: #333;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+/* GLOW TITLE */
+.glow {
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.25),
+        0 0 25px rgba(255,255,255,0.15);
+}
 
-    button:hover {
-      background: #555;
-    }
+/* =========================
+   IDENTITY LAYER
+========================= */
 
-    /* FOOTER */
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+.identity {
+    margin-top: 30px;
+    opacity: 0.8;
+    animation: fadeUp 2s ease forwards;
+}
 
-    footer a {
-      color: #ddd;
-      margin: 10px;
-      text-decoration: none;
-    }
+.identity span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 6px;
+}
 
-    footer a:hover {
-      color: white;
-    }
-  </style>
+/* =========================
+   SYSTEM TEXT
+========================= */
+
+.system {
+    text-align: center;
+    margin: 120px auto;
+    max-width: 700px;
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.75;
+    animation: fadeUp 2.2s ease forwards;
+}
+
+/* =========================
+   ARTIFACTS (CINEMATIC REVEAL)
+========================= */
+
+.artifacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 140px;
+    margin-top: 120px;
+}
+
+.artifact {
+    width: min(900px, 92%);
+    animation: fadeUp 2.4s ease forwards;
+}
+
+.artifact img {
+    width: 100%;
+    display: block;
+    transition: 0.5s ease;
+}
+
+.artifact img:hover {
+    transform: scale(1.01);
+    filter: brightness(1.1);
+}
+
+.artifact h2 {
+    margin-top: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.artifact p {
+    opacity: 0.65;
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 22px;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* =========================
+   FLOATING NODE
+========================= */
+
+.node {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    padding: 14px 18px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 11px;
+    letter-spacing: 2px;
+    animation: fadeUp 2.5s ease forwards;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 100px 20px;
+    margin-top: 140px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    animation: fadeUp 3s ease forwards;
+}
+
+footer a {
+    display: block;
+    margin: 8px 0;
+    font-size: 11px;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    opacity: 1;
+}
+
+</style>
+
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="hero">
-    <div class="header-content">
-      <h1 class="logo">Lifestyle LSS™</h1>
-      <p class="collection">ROBOTICS COLLECTION™</p>
-      
+<!-- SIGNAL -->
+<div class="signal">
+    <span>LSS JUNGLE SYSTEM ACTIVE • IDENTITY NODES ONLINE • ARTIFACT REALITY STABLE • 03:17 HUMIDITY BALANCED</span>
+</div>
+
+<!-- NAV -->
+<nav>
+    <a href="#">Manifest</a>
+    <a href="https://buy.stripe.com/4gM4gs5zPagTeL27tag7e03">Artifacts</a>
+    <a href="#">Units</a>
+    <a href="#">Access</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero fade">
+    <h1 class="glow">LUXBRANDLSS</h1>
+    <p>Premiomodder LSS — Jungle Cinematic Layer • Italy</p>
+
+    <div class="identity">
+        <span>UNIT ARCHITECTURE: ACTIVE</span>
+        <span>GENESIS ENVIRONMENT: JUNGLE CINEMATIC CLASS</span>
     </div>
-  </header>
+</section>
 
-  <!-- NAVBAR -->
-  <nav>
-    
-    <a href="releasepage.html">Releases</a>
-    <a href="aboutpage.html">About</a>
-  </nav>
+<!-- SYSTEM -->
+<section class="system fade">
+    LSS exists as a cinematic jungle system.
+    Artifacts are recovered modules of design intelligence.
+    Each activation expands the identity network across environments.
+</section>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <h2>thelssLabel </h2>
-    <p>Envying Modern Luxury ™</p>
-    <p> Known for Last Sinners Serving Collection </p>
+<!-- ARTIFACTS -->
+<section class="artifacts">
 
-    <br>
+    <div class="artifact fade">
+        <img src="https://i.imghippo.com/files/TJa2635sY.png">
+        <h2>Green LSS Artifact</h2>
+        <p>Recovered Cotton System Fragment — v2.1</p>
+        <a class="btn" href="https://buy.stripe.com/4gM4gs5zPagTeL27tag7e03">Activate Unit</a>
+    </div>
 
-    <a href="https://trapcat1440.github.io/VoyagerTheGame/">
-      <button>Clothing Brand Game</button>
-    </a>
+    <div class="artifact fade">
+        <img src="https://i.imghippo.com/files/xeZ3109s.png">
+        <h2>Teal LSS Artifact</h2>
+        <p>Adaptive Jungle Fabric Node — v2.2</p>
+        <a class="btn" href="https://buy.stripe.com/4gM4gs5zPagTeL27tag7e03">Activate Unit</a>
+    </div>
 
-    <br><br>
+</section>
 
+<!-- NODE -->
+<div class="node">
+    UNIT SIGNAL: STABLE
+</div>
 
-      <button>Robotics S26 Magazine(SOON)</button>
-    </a>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-      <h1>Our Family of LSS Collection</h1>
-      <p>Since early innovation , building a collection has been the dream of LSS with sensitive precision and imagery subjects.</p>
-      <p>Carrie - Signature cotton </P>
-      <p>Laggiso - Heavy duty luggage</p>
-  </footer>
-  <footer>
-    <h3>Become LSS Brand </h3>
-    <a href="https://www.linkedin.com/in/apparellss/">LinkedIn</a> |
-    <a href="https://www.instagram.com/collection_lss/">Instagram</a> |
-    <a href="https://www.reddit.com/user/LSStrademark/">Reddit</a>
-  </footer>
-  <footer>
-      <p>All rights reserved. Trademark Serial 88936737</p>
-  </footer>
+<!-- FOOTER -->
+<footer>
+    <a href="#">Trust Layer (Trustpilot)</a>
+    <a href="https://nftlss.co">Identity Compatible (Unstoppable Domains)</a>
+    <a href="https://www.linkedin.com/in/apparellss/">LinkedIn</a>
+    <a href="https://instagram.com/collection_lss">Instagram</a>
+    <a href="https://reddit.com/r/trademarkLSS">Reddit</a>
+</footer>
 
 </body>
-
 </html>
-
-</body>
-
-</html>
-
