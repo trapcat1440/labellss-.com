@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>premiomodderlss.it</title>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: black;
+        margin: 0;
+        color: white;
+    }
+
+    header {
+        background: black;
+        color: orange;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: italic;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .home-btn {
+        color: white;
+        text-decoration: underline;
+        font-size: 14px;
+    }
+
+    .moving-text {
+        background:black ;
+        border-bottom: 1px solid #999;
+        padding: 6px;
+        font-size: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .moving-text span {
+        display: inline-block;
+        padding-left: 100%;
+        animation: scroll 18s linear infinite;
+    }
+
+    @keyframes scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-100%); }
+    }
+
+    main {
+        width: 95%;
+        max-width: 1000px;
+        margin: 20px auto;
+    }
+
+    .listing {
+        background: black;
+        border: 1px solid #999;
+        margin-bottom: 10px;
+        display: flex;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .listing img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border: 1px solid #ccc;
+        background: white;
+    }
+
+    .details {
+        flex: 1;
+    }
+
+    .title {
+        font-size: 16px;
+        color: black;
+        font-weight: italic;
+        margin-bottom: 5px;
+        text-decoration: underline;
+    }
+
+    .description {
+        font-size: 13px;
+        color: navy;
+        margin-bottom: 8px;
+    }
+
+    .meta {
+        font-size: 12px;
+        color: red;
+    }
+
+    .employee {
+        margin-top: 8px;
+        font-size: 12px;
+    }
+
+    .employee strong {
+        color: #000;
+    }
+
+    .rating {
+        font-size: 12px;
+        color: #ff9900;
+        margin-top: 5px;
+    }
+
+    .buy {
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 13px;
+        color: black;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 12px;
+        padding: 20px;
+        color: #333;
+    }
+</style>
+ <link rel="icon" type="image/png" href="https://i.imghippo.com/files/kDjn8691xk.png">
+</head>
+
+<body>
+ <!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->
+<header>
+    <div>The Acronym Collection Envy LSS</div>
+    <a class="home-btn" href="index.html">Home</a>
+</header>
+<header>
+     
+    <img src="https://i.imghippo.com/files/KER1874hcE.png" width="300" height="200"</a>
+    
+</header>
+
+<div class="moving-text">
+    <span>nftlss.co</span>
+</div>
+
+
+<main>
+
+    <!-- ITEM 1 -->
+    <div class="listing">
+        <div class="slideshow-widget">
+
+    <div class="slideshow-title">Bottom Cutoff Black Denim Star Spangle from the acronym LSS collection
+</div>
+     
+     <h1><a href="https://buy.stripe.com/8x2eV6bYd3Sv1Yg5l2g7e05" target="_blank">30x32</a>
+    
+
+    <div class="slideshow-view">
+        <div id="scene1" class="scene"></div>
+        <div id="scene2" class="scene"></div>
+        <div id="scene3" class="scene"></div>
+        <div id="scene4" class="scene"></div>
+        <div id="scene5" class="scene"></div>
+        <div id="scene6" class="scene"></div>
+        <div id="scene7" class="scene"></div>
+        <div id="scene8" class="scene"></div>
+    </div>
+
+    <div class="slideshow-buttons">
+        <button onclick="changeScene(-1)">◀ Back</button>
+        <button onclick="changeScene(1)">Next ▶</button>
+    </div>
+
+</div>
+
+<style>
+.slideshow-widget{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    background:white;
+    border:1px solid #333;
+    border-radius:16px;
+    overflow:hidden;
+    color:orange;
+    font-family:Arial,sans-serif;
+}
+
+.slideshow-title{
+    padding:18px;
+    text-align:right;
+    font-size:22px;
+    font-weight:italic
+}
+
+.slideshow-view{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    background:#000;
+}
+
+.slideshow-widget .scene{
+    position:absolute;
+    inset:0;
+
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-color:white;
+
+    opacity:0;
+    transition:.4s;
+}
+
+.slideshow-widget .scene.active{
+    opacity:1;
+}
+
+.slideshow-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    padding:18px;
+}
+
+.slideshow-buttons button{
+    background:black;
+    color:orange;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.slideshow-buttons button:hover{
+    background:#444;
+}
+</style>
+
+<script>
+
+let currentScene = 1;
+const totalScenes = 2;
+
+const backgrounds = {
+1:"https://i.imghippo.com/files/cmA2402juo.png",
+2:"https://i.imghippo.com/files/xgD1324wLo.png",
+};
+
+function showScene(index){
+
+    document.querySelectorAll(".slideshow-widget .scene").forEach(scene=>{
+        scene.classList.remove("active");
+    });
+
+    const scene=document.getElementById("scene"+index);
+    scene.style.backgroundImage=`url("${backgrounds[index]}")`;
+    scene.classList.add("active");
+}
+
+function changeScene(direction){
+
+    currentScene+=direction;
+
+    if(currentScene<1) currentScene=1;
+    if(currentScene>totalScenes) currentScene=totalScenes;
+
+    showScene(currentScene);
+}
+
+showScene(1);
+
+</script>
+    
+        
+    </div>
+    
+</main>
+
+<footer>
+  <rssapp-carousel id="0upxJ2IrLXhEFE9s"></rssapp-carousel><script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script>
+     <!-- TrustBox widget - Review Collector -->
+    
+<!-- TrustBox widget - Review Collector -->
+<div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6a1e2795b979cc82302f25ed" data-style-height="52px" data-style-width="100%" data-token="d77481c2-e62d-4cbc-90cb-8f22d6f862ed">
+  <a href="https://www.trustpilot.com/review/nftlss.co" target="_blank" rel="noopener">Trustpilot</a>
+</div>
+<!-- End TrustBox widget -->
+    <a href="https://nftlss.co">Identity Compatible (Unstoppable Domains)</a>
+    <a href="https://www.linkedin.com/in/apparellss/">LinkedIn</a>
+    <a href="https://instagram.com/collection_lss">Instagram</a>
+    <a href="https://reddit.com/r/trademarkLSS">Reddit</a>
+
+</footer>
+
+</body>
+</html>
