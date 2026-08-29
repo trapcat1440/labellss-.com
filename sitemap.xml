@@ -1,54 +1,57 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-		<!--	created with www.mysitemapgenerator.com	-->
-		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
 <url>
-	<loc>https://nftlss.co/</loc>
-	<lastmod>2026-08-29T21:02:46+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://nftlss.co/</loc>
+  <lastmod>2026-06-11T01:00:22+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-	<loc>https://nftlss.co/member.html</loc>
-	<lastmod>2026-08-29T21:02:46+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://nftlss.co/index.html</loc>
+  <lastmod>2026-06-11T01:00:22+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://nftlss.co/theacronymcollectionlss.html</loc>
-	<lastmod>2026-08-29T21:02:46+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://nftlss.co/bottomkneerip.html</loc>
+  <lastmod>2026-06-11T01:00:22+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://nftlss.co/privacypage.html</loc>
-	<lastmod>2026-08-29T21:02:46+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://nftlss.co/privacypage.html</loc>
+  <lastmod>2026-06-11T01:00:22+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://nftlss.co/refundpage.html</loc>
-	<lastmod>2026-08-29T21:02:46+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://nftlss.co/refundpage.html</loc>
+  <lastmod>2026-06-11T01:00:22+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://nftlss.co/index.html</loc>
-	<lastmod>2026-08-29T21:02:46+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://nftlss.co/theacronymcollectionlss.html</loc>
+  <lastmod>2026-06-11T01:00:22+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://nftlss.co/techfleecelss.html</loc>
-	<lastmod>2026-08-29T21:02:48+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://nftlss.co/spraydenimlss.html</loc>
+  <lastmod>2026-06-11T01:00:22+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
-<url>
-	<loc>https://nftlss.co/bottomkneerip.html</loc>
-	<lastmod>2026-08-29T21:02:48+01:00</lastmod>
-	<priority>1.0</priority>
+	<url>
+  <loc>https://nftlss.co/superdenimlss.html</loc>
+  <lastmod>2026-06-11T01:00:22+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
-<url>
-	<loc>https://nftlss.co/spraydenimlss.html</loc>
-	<lastmod>2026-08-29T21:02:48+01:00</lastmod>
-	<priority>1.0</priority>
+	<url>
+  <loc>https://nftlss.co/techfleecelss.html</loc>
+  <lastmod>2026-06-11T01:00:22+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
-<url>
-	<loc>https://nftlss.co/superdenimlss.html</loc>
-	<lastmod>2026-08-29T21:02:48+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
+
+
 </urlset>
