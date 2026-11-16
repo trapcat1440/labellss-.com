@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LSS | Redirecting...</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #080808;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+
+header {
+    padding: 25px 7%;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+    font-size: 38px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -3px;
+}
+
+.logo span {
+    color: #a8ff00;
+}
+
+/* MAIN */
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(40px, 8vw, 75px);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #8bd900;
+}
+
+.description {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.7;
+    max-width: 420px;
+}
+
+/* LOADING ANIMATION */
+
+.loader {
+    width: 220px;
+    height: 5px;
+    background: #eeeeee;
+    margin: 40px 0 20px;
+    overflow: hidden;
+}
+
+.loader-bar {
+    height: 100%;
+    width: 0%;
+    background: #a8ff00;
+    animation: loading 5s linear forwards;
+}
+
+@keyframes loading {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+.redirect-text {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.redirect-text span {
+    color: #83c900;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #eeeeee;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #888888;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <span>///</span> LSS
+    </div>
+</header>
+
+<main>
+
+    <div class="label">
+        WELCOME TO LSS
+    </div>
+
+    <h1>
+        YOU ARE<br>
+        BEING <span>REDIRECTED.</span>
+    </h1>
+
+    <p class="description">
+        Please wait while we take you to your destination.
+        Thank you for choosing LSS.
+    </p>
+
+    <div class="loader">
+        <div class="loader-bar"></div>
+    </div>
+
+    <div class="redirect-text">
+        REDIRECTING <span>...</span>
+    </div>
+
+</main>
+
+<footer>
+    © 2026 LSS. ALL RIGHTS RESERVED.
+    <br><br>
+    MADE TO MOVE. BUILT TO LAST.
+</footer>
+
+<script>
+setTimeout(function() {
+    window.location.href = "https://YOUR-WEBSITE.com";
+}, 5000);
+</script>
+
+</body>
+</html>
