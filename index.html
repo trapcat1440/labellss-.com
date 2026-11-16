@@ -1,1790 +1,721 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PREMIOMODDER LSS Official</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>PREMIOMODDER LSS</title>
-
-    <link rel="icon" type="image/png" href="https://i.imghippo.com/files/kDjn8691xk.png">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <style>
-/* =====================================================
-   ROTATING LOGO
-===================================================== */
-
-.rotating-logo {
-    position: absolute;
-
-    top: 10px;
-    left: 50%;
-
-    width: 500px;
-    height: 300px;
-
-    object-fit: contain;
-
-    transform: translateX(-50%);
-
-    transform-style: preserve-3d;
-
-    animation: coinFlip 4s linear infinite;
-
-    filter:
-        drop-shadow(0 0 12px rgba(255, 106, 0, 0.5))
-        drop-shadow(0 0 35px rgba(255, 106, 0, 0.2));
-
-    z-index: 20;
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-@keyframes coinFlip {
-
-    0% {
-        transform: translateX(-50%) rotateY(0deg);
-    }
-
-    100% {
-        transform: translateX(-50%) rotateY(360deg);
-    }
-
-}
-
-@keyframes rotateLogo {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Optional: pause when you hover over it */
-
-.rotating-logo:hover {
-    animation-play-state: paused;
-
-    filter:
-        drop-shadow(0 0 15px rgba(255, 106, 0, 0.6))
-        drop-shadow(0 0 40px rgba(255, 106, 0, 0.3));
-}
-
-
-        /* =====================================================
-           GLOBAL
-        ===================================================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-       /* =====================================================
-   ORANGE THEME
-===================================================== */
 
 :root {
-    --orange: #ff6a00;
-    --orange-light: #ff8a3d;
-    --orange-dark: #c94f00;
-    --orange-glow: rgba(255, 106, 0, 0.35);
-    
-    
+    --green: #a8ff00;
+    --black: #080808;
+    --grey: #f4f4f4;
 }
-
-
-/* Main text */
 
 body {
-    color: var(--orange);
+    font-family: Arial, sans-serif;
+    color: var(--black);
+    background: white;
 }
 
+/* ANNOUNCEMENT */
 
-/* Navigation */
+.announcement {
+    background: var(--black);
+    color: white;
+    text-align: center;
+    padding: 11px;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* HEADER */
+
+header {
+    min-height: 85px;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-size: 38px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -3px;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
 
 nav a {
-    color: var(--orange);
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 nav a:hover {
-    color: var(--orange-light);
+    color: #82c900;
 }
 
+.cart {
+    font-weight: bold;
+    font-size: 13px;
+}
 
-/* Brand */
+/* HERO */
+
+.hero {
+    min-height: 550px;
+    background: #eeeeee;
+    display: flex;
+    align-items: center;
+    padding: 70px 7%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 550px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero small {
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: .9;
+    font-weight: 900;
+    font-style: italic;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    color: #8bd900;
+}
+
+.hero p {
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 400px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--green);
+    color: black;
+    padding: 17px 28px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 900;
+    transition: .2s;
+}
+
+.btn:hover {
+    background: black;
+    color: white;
+}
+
+.hero-image {
+    position: absolute;
+    right: 5%;
+    top: 0;
+    width: 48%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* SECTION HEADINGS */
+
+.section {
+    padding: 75px 6%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.section-heading a {
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid var(--green);
+    padding-bottom: 5px;
+}
+
+/* PRODUCTS */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product {
+    min-width: 0;
+}
+
+.product-image {
+    background: #f1f1f1;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.product:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--green);
+    padding: 7px 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.product h3 {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.product p {
+    color: #666;
+    font-size: 13px;
+    margin: 8px 0;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.add-button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 12px;
+    background: white;
+    border: 1px solid black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.add-button:hover {
+    background: var(--black);
+    color: white;
+}
+
+/* COLLECTION BANNERS */
+
+.collections {
+    padding: 30px 6% 75px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.collection {
+    min-height: 350px;
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.collection img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.collection-text {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    color: white;
+    text-shadow: 0 1px 5px #333;
+}
+
+.collection-text h2 {
+    font-size: 35px;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.collection-text a {
+    display: inline-block;
+    background: var(--green);
+    color: black;
+    padding: 12px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+/* BRAND STATEMENT */
 
 .brand {
-    color: var(--orange);
+    background: var(--black);
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
 }
 
-
-/* Hero */
-
-.hero-title h1 {
-    color: var(--orange);
-
-    text-shadow:
-        0 0 10px rgba(255,106,0,.25),
-        0 0 30px rgba(255,106,0,.18),
-        0 0 70px rgba(255,106,0,.08);
+.brand h2 {
+    font-size: clamp(35px, 6vw, 65px);
+    font-weight: 900;
+    font-style: italic;
 }
 
-.hero-title .small,
-.hero-title .subtitle {
-    color: var(--orange-light);
+.brand h2 span {
+    color: var(--green);
 }
 
-
-/* Hero logo */
-
-.hero-logo {
-    filter:
-        drop-shadow(0 0 15px rgba(255,106,0,.25));
+.brand p {
+    max-width: 550px;
+    margin: 20px auto;
+    line-height: 1.8;
+    color: #ccc;
 }
 
+/* BENEFITS */
 
-/* Floating labels */
-
-.floating-label {
-    color: var(--orange);
-
-    border-color:
-        rgba(255,106,0,.35);
-
-    box-shadow:
-        0 0 20px rgba(255,106,0,.05);
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 40px 5%;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
 }
 
-
-/* Buttons */
-
-.button {
-    color: var(--orange);
-
-    border-color:
-        rgba(255,106,0,.45);
+.benefits div {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 15px;
 }
 
-.button:hover {
-    background: var(--orange);
-    color: #050505;
+/* NEWSLETTER */
 
-    box-shadow:
-        0 0 25px rgba(255,106,0,.25);
+.newsletter {
+    padding: 65px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
 }
-
-.button.primary {
-    background: var(--orange);
-    color: #050505;
-
-    border-color: var(--orange);
-}
-
-.button.primary:hover {
-    background: transparent;
-    color: var(--orange);
-}
-
-
-/* Feature bar */
-
-.feature strong {
-    color: var(--orange);
-}
-
-
-/* Collection headings */
-
-.section-header h2,
-.card-info h3 {
-    color: var(--orange);
-}
-
-
-/* Collection links */
-
-.card-info a {
-    color: var(--orange);
-
-    border-color: var(--orange);
-}
-
-
-/* Statement */
-
-.statement h2 {
-    color: var(--orange);
-
-    text-shadow:
-        0 0 30px rgba(255,106,0,.12);
-}
-
-.statement h2 em {
-    color: var(--orange-light);
-}
-
-
-/* Announcement */
-
-.announcement span {
-    color: var(--orange);
-}
-
-
-/* Orbit */
-
-.orbit {
-    border-color:
-        rgba(255,106,0,.18);
-}
-
-.orbit::before {
-    background: var(--orange);
-
-    box-shadow:
-        0 0 10px var(--orange),
-        0 0 30px var(--orange);
-}
-
-
-/* Scroll indicator */
-
-.scroll {
-    color: var(--orange);
-}
-
-.scroll::after {
-    background: var(--orange);
-}
-
-
-/* Newsletter */
 
 .newsletter h2 {
-    color: var(--orange);
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.newsletter p {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.newsletter form {
+    display: flex;
+    max-width: 450px;
+    width: 100%;
+}
+
+.newsletter input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid black;
 }
 
 .newsletter button {
-    background: var(--orange);
-    color: #050505;
+    background: var(--green);
+    border: none;
+    padding: 15px 20px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
+/* FOOTER */
 
-/* Footer */
-
-.footer-brand,
-.footer-column a:hover {
-    color: var(--orange);
+footer {
+    background: var(--black);
+    color: white;
+    padding: 45px 6%;
 }
 
-
-/* Floating status */
-
-.node {
-    color: var(--orange);
-
-    border-color:
-        rgba(255,106,0,.25);
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
-
-/* Selection color */
-
-::selection {
-    background: var(--orange);
-    color: #050505;
+footer a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+    margin-top: 15px;
 }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-
-        /* =====================================================
-           CINEMATIC BACKGROUND
-        ===================================================== */
-
-        .background {
-            position: fixed;
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    rgba(0,0,0,.45),
-                    rgba(0,0,0,.85)
-                ),
-                url('YOUR_BACKGROUND_IMAGE_URL')
-                center / cover no-repeat;
-
-            z-index: -3;
-        }
-
-        .background::after {
-            content: "";
-
-            position: absolute;
-            inset: 0;
-
-            background:
-                radial-gradient(
-                    circle at 50% 30%,
-                    rgba(255,255,255,.08),
-                    transparent 35%
-                );
-
-            z-index: -2;
-        }
-
-
-        /* =====================================================
-           GRAIN
-        ===================================================== */
-
-        .grain {
-            position: fixed;
-            inset: 0;
-
-            pointer-events: none;
-
-            opacity: .06;
-
-            background-image:
-                url("https://grainy-gradients.vercel.app/noise.svg");
-
-            z-index: 999;
-        }
-
-
-        /* =====================================================
-           TOP ANNOUNCEMENT
-        ===================================================== */
-
-        .announcement {
-            position: fixed;
-            top: 0;
-            left: 0;
-
-            width: 100%;
-
-            padding: 9px;
-
-            background: rgba(0,0,0,.65);
-            backdrop-filter: blur(15px);
-
-            border-bottom:
-                1px solid rgba(255,255,255,.08);
-
-            overflow: hidden;
-
-            z-index: 100;
-        }
-
-        .announcement-track {
-            display: flex;
-            width: max-content;
-
-            animation:
-                announcement 25s linear infinite;
-        }
-
-        .announcement span {
-            margin-right: 70px;
-
-            font-size: 9px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-
-            opacity: .7;
-        }
-
-        @keyframes announcement {
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50%);
-            }
-        }
-
-
-        /* =====================================================
-           NAVIGATION
-        ===================================================== */
-
-        nav {
-            position: absolute;
-            top: 55px;
-            left: 50%;
-
-            transform: translateX(-50%);
-
-            width: 92%;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            z-index: 50;
-        }
-
-        .brand {
-            font-size: 13px;
-            letter-spacing: 4px;
-            font-weight: 600;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            font-size: 9px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-
-            opacity: .55;
-
-            transition: .3s;
-        }
-
-        .nav-links a:hover {
-            opacity: 1;
-        }
-
-        .menu {
-            border: 1px solid rgba(255,255,255,.25);
-
-            padding: 9px 14px;
-
-            font-size: 9px;
-            letter-spacing: 2px;
-
-            display: none;
-        }
-
-
-        /* =====================================================
-           HERO
-        ===================================================== */
-
-        .hero {
-            position: relative;
-
-            min-height: 100vh;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 140px 20px 80px;
-
-            overflow: hidden;
-        }
-
-
-        /* Main title */
-
-        .hero-title {
-            position: relative;
-
-            z-index: 10;
-        }
-
-        .hero-title .small {
-            display: block;
-
-            margin-bottom: 15px;
-
-            font-size: 10px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-
-            opacity: .55;
-        }
-
-        .hero-title h1 {
-            font-size:
-                clamp(60px, 13vw, 180px);
-
-            line-height: .8;
-
-            font-weight: 500;
-
-            letter-spacing:
-                clamp(4px, 1vw, 14px);
-
-            text-shadow:
-                0 0 20px rgba(255,255,255,.12),
-                0 0 80px rgba(255,255,255,.05);
-        }
-
-        .hero-title h1 span {
-            display: block;
-        }
-
-        .hero-title .subtitle {
-            margin-top: 30px;
-
-            font-size: 11px;
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
-            opacity: .65;
-        }
-
-
-        /* =====================================================
-           HERO CENTER LOGO
-        ===================================================== */
-
-        .hero-logo {
-            width: 180px;
-
-            margin: 35px auto 25px;
-
-            filter:
-                drop-shadow(
-                    0 0 30px
-                    rgba(255,255,255,.15)
-                );
-
-            transition: .5s;
-        }
-
-        .hero-logo:hover {
-            transform: scale(1.05);
-        }
-
-
-        /* =====================================================
-           CTA
-        ===================================================== */
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-
-            gap: 12px;
-
-            margin-top: 30px;
-        }
-
-        .button {
-            padding: 14px 25px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.3);
-
-            font-size: 9px;
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            transition: .35s;
-        }
-
-        .button.primary {
-            background: white;
-            color: black;
-        }
-
-        .button:hover {
-            background: white;
-            color: black;
-        }
-
-        .button.primary:hover {
-            background: transparent;
-            color: white;
-        }
-
-
-        /* =====================================================
-           FLOATING LABELS
-        ===================================================== */
-
-        .floating-label {
-            position: absolute;
-
-            padding: 10px 14px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.18);
-
-            background:
-                rgba(0,0,0,.35);
-
-            backdrop-filter: blur(12px);
-
-            font-size: 8px;
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            opacity: .8;
-        }
-
-        .label-one {
-            top: 32%;
-            left: 8%;
-
-            transform: rotate(-5deg);
-        }
-
-        .label-two {
-            top: 26%;
-            right: 8%;
-
-            transform: rotate(5deg);
-        }
-
-        .label-three {
-            bottom: 17%;
-            left: 12%;
-        }
-
-        .label-four {
-            bottom: 20%;
-            right: 12%;
-        }
-
-
-        /* =====================================================
-           FLOATING IMAGES
-        ===================================================== */
-
-        .floating-image {
-            position: absolute;
-
-            width: 150px;
-
-            opacity: .75;
-
-            filter:
-                grayscale(100%)
-                brightness(.7);
-
-            transition: .5s;
-
-            z-index: 2;
-        }
-
-        .floating-image:hover {
-            opacity: 1;
-
-            filter:
-                grayscale(0%)
-                brightness(1);
-
-            transform: scale(1.05);
-        }
-
-        .image-one {
-            top: 24%;
-            left: 4%;
-
-            transform: rotate(-8deg);
-        }
-
-        .image-two {
-            top: 20%;
-            right: 5%;
-
-            transform: rotate(8deg);
-        }
-
-        .image-three {
-            bottom: 8%;
-            right: 6%;
-
-            width: 130px;
-
-            transform: rotate(-5deg);
-        }
-
-
-        /* =====================================================
-           HERO CIRCLE
-        ===================================================== */
-
-        .orbit {
-            position: absolute;
-
-            width: 620px;
-            height: 620px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.08);
-
-            border-radius: 50%;
-
-            animation:
-                spin 30s linear infinite;
-        }
-
-        .orbit::before {
-            content: "";
-
-            position: absolute;
-
-            width: 8px;
-            height: 8px;
-
-            background: white;
-
-            border-radius: 50%;
-
-            top: 20px;
-            left: 50%;
-
-            box-shadow:
-                0 0 20px white;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-
-        /* =====================================================
-           SCROLL INDICATOR
-        ===================================================== */
-
-        .scroll {
-            position: absolute;
-
-            bottom: 25px;
-            left: 50%;
-
-            transform: translateX(-50%);
-
-            font-size: 8px;
-            letter-spacing: 3px;
-
-            opacity: .45;
-
-            text-transform: uppercase;
-        }
-
-        .scroll::after {
-            content: "";
-
-            display: block;
-
-            width: 1px;
-            height: 35px;
-
-            background: white;
-
-            margin: 10px auto 0;
-
-            opacity: .4;
-        }
-
-
-        /* =====================================================
-           FEATURE BAR
-        ===================================================== */
-
-        .feature-bar {
-            width: 92%;
-            max-width: 1200px;
-
-            margin: -20px auto 100px;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            border:
-                1px solid
-                rgba(255,255,255,.12);
-
-            background:
-                rgba(0,0,0,.35);
-
-            backdrop-filter: blur(15px);
-        }
-
-        .feature {
-            padding: 25px;
-
-            border-right:
-                1px solid
-                rgba(255,255,255,.1);
-
-            text-align: center;
-        }
-
-        .feature:last-child {
-            border-right: none;
-        }
-
-        .feature strong {
-            display: block;
-
-            font-size: 15px;
-            font-weight: 400;
-
-            margin-bottom: 5px;
-        }
-
-        .feature span {
-            font-size: 8px;
-
-            letter-spacing: 2px;
-
-            opacity: .5;
-
-            text-transform: uppercase;
-        }
-
-
-        /* =====================================================
-           COLLECTION HEADER
-        ===================================================== */
-
-        .section-header {
-            width: 92%;
-            max-width: 1200px;
-
-            margin: 0 auto 45px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-        }
-
-        .section-header small {
-            font-size: 9px;
-
-            letter-spacing: 3px;
-
-            opacity: .5;
-        }
-
-        .section-header h2 {
-            margin-top: 10px;
-
-            font-size: 42px;
-            font-weight: 400;
-
-            letter-spacing: 2px;
-        }
-
-        .section-header p {
-            max-width: 300px;
-
-            font-size: 11px;
-            line-height: 1.7;
-
-            opacity: .5;
-        }
-
-
-        /* =====================================================
-           COLLECTION GRID
-        ===================================================== */
-
-        .collection {
-            width: 92%;
-            max-width: 1200px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(12, 1fr);
-
-            gap: 20px;
-        }
-
-        .card {
-            position: relative;
-
-            overflow: hidden;
-
-            background: #111;
-
-            min-height: 400px;
-        }
-
-        .card:nth-child(1) {
-            grid-column: span 7;
-        }
-
-        .card:nth-child(2) {
-            grid-column: span 5;
-        }
-
-        .card:nth-child(3) {
-            grid-column: span 5;
-        }
-
-        .card:nth-child(4) {
-            grid-column: span 7;
-        }
-
-        .card img {
-            width: 100%;
-            height: 100%;
-
-            min-height: 400px;
-
-            object-fit: cover;
-
-            transition:
-                transform .7s,
-                filter .7s;
-        }
-
-        .card:hover img {
-            transform: scale(1.05);
-
-            filter: brightness(.65);
-        }
-
-        .card-info {
-            position: absolute;
-
-            left: 25px;
-            right: 25px;
-            bottom: 25px;
-
-            z-index: 3;
-        }
-
-        .card-info span {
-            font-size: 8px;
-
-            letter-spacing: 3px;
-
-            opacity: .65;
-        }
-
-        .card-info h3 {
-            margin-top: 7px;
-
-            font-size: 25px;
-            font-weight: 400;
-        }
-
-        .card-info a {
-            display: inline-block;
-
-            margin-top: 12px;
-
-            font-size: 8px;
-
-            letter-spacing: 2px;
-
-            border-bottom:
-                1px solid white;
-
-            padding-bottom: 4px;
-        }
-
-
-        /* =====================================================
-           STATEMENT
-        ===================================================== */
-
-        .statement {
-            width: 92%;
-            max-width: 1000px;
-
-            margin: 180px auto;
-
-            text-align: center;
-        }
-
-        .statement span {
-            font-size: 9px;
-
-            letter-spacing: 4px;
-
-            opacity: .45;
-        }
-
-        .statement h2 {
-            margin-top: 25px;
-
-            font-size:
-                clamp(30px, 5vw, 65px);
-
-            font-weight: 300;
-
-            line-height: 1.1;
-        }
-
-        .statement h2 em {
-            opacity: .4;
-            font-style: normal;
-        }
-
-
-        /* =====================================================
-           NEWSLETTER
-        ===================================================== */
-
-        .newsletter {
-            width: 92%;
-            max-width: 800px;
-
-            margin: 0 auto 150px;
-
-            padding: 60px 30px;
-
-            text-align: center;
-
-            border:
-                1px solid
-                rgba(255,255,255,.12);
-
-            background:
-                rgba(0,0,0,.35);
-
-            backdrop-filter: blur(15px);
-        }
-
-        .newsletter h2 {
-            font-size: 30px;
-            font-weight: 400;
-        }
-
-        .newsletter p {
-            margin: 12px auto 25px;
-
-            max-width: 450px;
-
-            font-size: 11px;
-            line-height: 1.7;
-
-            opacity: .55;
-        }
-
-        .email-box {
-            display: flex;
-
-            max-width: 450px;
-
-            margin: auto;
-        }
-
-        .email-box input {
-            flex: 1;
-
-            padding: 15px;
-
-            background:
-                rgba(255,255,255,.05);
-
-            border:
-                1px solid
-                rgba(255,255,255,.2);
-
-            color: white;
-
-            outline: none;
-        }
-
-        .email-box button {
-            padding: 0 20px;
-
-            background: white;
-            color: black;
-
-            border: none;
-
-            font-family: inherit;
-
-            font-size: 9px;
-
-            letter-spacing: 2px;
-        }
-
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        footer {
-            padding: 80px 5% 40px;
-
-            border-top:
-                1px solid
-                rgba(255,255,255,.1);
-        }
-
-        .footer-top {
-            display: flex;
-
-            justify-content: space-between;
-            align-items: start;
-        }
-
-        .footer-brand {
-            font-size: 20px;
-
-            letter-spacing: 5px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 70px;
-        }
-
-        .footer-column span {
-            display: block;
-
-            margin-bottom: 15px;
-
-            font-size: 8px;
-
-            letter-spacing: 3px;
-
-            opacity: .4;
-        }
-
-        .footer-column a {
-            display: block;
-
-            margin: 7px 0;
-
-            font-size: 10px;
-
-            opacity: .6;
-
-            transition: .3s;
-        }
-
-        .footer-column a:hover {
-            opacity: 1;
-        }
-
-        .copyright {
-            margin-top: 80px;
-
-            padding-top: 20px;
-
-            border-top:
-                1px solid
-                rgba(255,255,255,.08);
-
-            font-size: 8px;
-
-            letter-spacing: 2px;
-
-            opacity: .35;
-        }
-
-
-        /* =====================================================
-           MOBILE
-        ===================================================== */
-
-        @media(max-width: 768px) {
-
-            nav {
-                top: 50px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .menu {
-                display: block;
-            }
-
-            .hero {
-                min-height: 900px;
-            }
-
-            .hero-title h1 {
-                font-size: 62px;
-            }
-
-            .hero-logo {
-                width: 130px;
-            }
-
-            .orbit {
-                width: 400px;
-                height: 400px;
-            }
-
-            .floating-image {
-                width: 90px;
-            }
-
-            .image-one {
-                top: 22%;
-                left: 2%;
-            }
-
-            .image-two {
-                top: 25%;
-                right: 2%;
-            }
-
-            .image-three {
-                bottom: 15%;
-                right: 3%;
-                width: 85px;
-            }
-
-            .floating-label {
-                font-size: 6px;
-                padding: 7px 9px;
-            }
-
-            .label-one {
-                left: 3%;
-            }
-
-            .label-two {
-                right: 3%;
-            }
-
-            .label-three {
-                left: 3%;
-            }
-
-            .label-four {
-                right: 3%;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-
-                width: 220px;
-
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .feature-bar {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .feature:nth-child(2) {
-                border-right: none;
-            }
-
-            .feature:nth-child(-n+2) {
-                border-bottom:
-                    1px solid
-                    rgba(255,255,255,.1);
-            }
-
-            .section-header {
-                display: block;
-            }
-
-            .section-header p {
-                margin-top: 20px;
-            }
-
-            .collection {
-                display: block;
-            }
-
-            .card {
-                margin-bottom: 20px;
-                min-height: 350px;
-            }
-
-            .card img {
-                min-height: 350px;
-            }
-
-            .statement {
-                margin: 120px auto;
-            }
-
-            .email-box {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .email-box button {
-                padding: 15px;
-            }
-
-            .footer-top {
-                flex-direction: column;
-                gap: 50px;
-            }
-
-            .footer-links {
-                gap: 35px;
-            }
-
-        }
-
-    </style>
+footer h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+footer .logo {
+    font-size: 38px;
+}
+
+.copyright {
+    border-top: 1px solid #444;
+    margin-top: 40px;
+    padding-top: 20px;
+    font-size: 11px;
+    color: #aaa;
+}
+
+/* MOBILE */
+
+@media(max-width: 750px) {
+    header {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    nav {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 600px;
+        align-items: flex-start;
+        padding-top: 55px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 48%;
+        top: auto;
+        bottom: 0;
+        right: 0;
+        opacity: .35;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .collections {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .newsletter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
-<div class="background"></div>
-<div class="grain"></div>
+<div class="announcement">
+    FREE SHIPPING ON ORDERS OVER £75 | NEW COLLECTION OUT NOW
+</div>
 
+<header>
+    <div class="logo"><span>///premiomodder</span>nftlss.co</div>
 
-<!-- =====================================================
-     ANNOUNCEMENT
-====================================================== -->
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#shop">SHOP ALL</a>
+        <a href="#men">MEN</a>
+        <a href="#women">WOMEN</a>
+        <a href="#about">ABOUT US</a>
+        <a href="collections-premio-modder">Older Collections</a>
+    </nav>
 
-
-
-
-<!-- =====================================================
-     NAV
-====================================================== -->
-
-<nav>
-
-    <div class="brand">
-        Premio Modder (LSS)
+    <div class="cart">
+        BAG (<span id="cart-count">0</span>)
     </div>
+</header>
 
-    <div class="nav-links">
+<!-- HERO -->
 
-        <a href="index.html">Home</a>
+<section class="hero" id="home">
 
-        <a href="theacronymcollectionlss.html">
-            Collection
-        </a>
+    <div class="hero-content">
+        <small>THE NEW FINERS Collection</small>
 
-        <a href="about.html">
-            About
-        </a>
+        <h1>MADE TO<br>MOVE.<br><span>BUILT TO LAST.</span></h1>
 
-        <a href="contact.html">
-            Contact
-        </a>
-
-    </div>
-
-    <div class="menu">
-        MENU
-    </div>
-
-</nav>
-
-
-<!-- =====================================================
-     HERO
-====================================================== -->
-
-<section class="hero">
-
-
-   
-
-    <!-- Floating images -->
-
-    <img
-        class="floating-image image-one"
-        src=""
-        alt=""
-    >
-
-    <img
-        class="floating-image image-two"
-        src="YOUR_PRODUCT_IMAGE_2"
-        alt=""
-    >
-
-    <img
-        class="floating-image image-three"
-        src="YOUR_PRODUCT_IMAGE_3"
-        alt=""
-    >
-
-
-    <!-- Floating labels -->
-
-   
-
-    <!-- Main hero -->
-
-    <div class="hero-title">
-
-        <span class="small">
-            Home
-        </span>
-
-        <h1> Born Against 
-            
-            <span>Ordinary</span>
-        </h1>
-<img
-    class="rotating-logo"
-    src="https://i.imghippo.com/files/YYW6473Y.png"
-    alt="LSS Logo"
->
-
-
-        
-        <p class="subtitle">
-            Designed in France · Made in Italy · USA
+        <p>
+            Discover the finers collection by premio modder fashion house
         </p>
 
-
-
-
-    <div class="scroll">
-        Scroll to discover
+        <a href="#shop" class="btn">Not yet available →</a>
     </div>
+    <img src="https://i.imghippo.com/files/FOpr4790uog.png" alt="Finers_collection__8_-removebg-preview" />
 
 </section>
 
+<!-- NEW ARRIVALS -->
 
-<!-- =====================================================
-     FEATURE BAR
-====================================================== -->
 
-<section class="feature-bar">
+<section class="section" id="shop">
 
-    <div class="feature">
-        <strong>The Acronym Collection</strong>
-        <span>Latest Season</span>
+    <div class="section-heading">
+        <h2>NEW ARRIVALS</h2>
+        <span class="sold-label">ALL SOLD OUT</span>
     </div>
 
-    <div class="feature">
-        <strong>Product Made by </strong>
-        <span>Authorized Groups</span>
-    </div>
+    <div class="products">
 
-    <div class="feature">
-        <strong>"The making of every collection starts with another"-Warehouse Group</strong>
-        <span>Manufactured</span>
-    </div>
-
-    <div class="feature">
-        <strong>Born Against Ordinary</strong>
-        <span>Premio Modder Fashion House</span>
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FEATURED COLLECTION
-====================================================== -->
-
-<section id="featured">
-
-    <div class="section-header">
-
-        <div>
-
-            <small>
-                001 / COLLECTION
-            </small>
-
-            <h2>
-                Ultimate Comfort
-            </h2>
-
+        <div class="product sold-out">
+            <div class="product-image">
+                <span class="tag">SOLD OUT</span>
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600"
+                alt="Classic LSS T-shirt">
+            </div>
+            <h3>LSS ESSENTIAL TEE</h3>
+            <p>Black / Premium Cotton</p>
+            <div class="price">£29.99</div>
+            <button class="add-button" disabled>SOLD OUT</button>
         </div>
 
-        
+        <div class="product sold-out">
+            <div class="product-image">
+                <span class="tag">SOLD OUT</span>
+                <img src="https://images.unsplash.com/photo-1551488831-00ddcb6cbd3?w=600"
+                alt="Sportswear clothing">
+            </div>
+            <h3>LSS PERFORMANCE TOP</h3>
+            <p>Performance / Black</p>
+            <div class="price">£34.99</div>
+            <button class="add-button" disabled>SOLD OUT</button>
+        </div>
+
+        <div class="product sold-out">
+            <div class="product-image">
+                <span class="tag">SOLD OUT</span>
+                <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600"
+                alt="Fashion collection">
+            </div>
+            <h3>LSS EVERYDAY COLLECTION</h3>
+            <p>Premium / Everyday</p>
+            <div class="price">£39.99</div>
+            <button class="add-button" disabled>SOLD OUT</button>
+        </div>
+
+        <div class="product sold-out">
+            <div class="product-image">
+                <span class="tag">SOLD OUT</span>
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600"
+                alt="Streetwear fashion">
+            </div>
+            <h3>LSS STREET COLLECTION</h3>
+            <p>Urban / Premium</p>
+            <div class="price">£44.99</div>
+            <button class="add-button" disabled>SOLD OUT</button>
+        </div>
 
     </div>
+</section>
 
+<style>
+.sold-out .product-image img {
+    filter: grayscale(100%);
+    opacity: 0.55;
+}
+
+.sold-out .tag {
+    background: black;
+    color: white;
+}
+
+.sold-out .add-button {
+    background: #eeeeee;
+    color: #777777;
+    border: 1px solid #dddddd;
+    cursor: not-allowed;
+}
+
+.sold-out .add-button:disabled {
+    opacity: 1;
+}
+
+.sold-label {
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+</style>
+
+
+<!-- SHOP BY CATEGORY -->
+
+<div class="collections" id="men">
 
     <div class="collection">
+        <img src="https://i.imghippo.com/files/WcF4296as.jpeg" alt="Gemini_Generated_Image_1vgvou1vgvou1vgv" />
 
-
-        <!-- CARD 01 -->
-
-        <div class="card">
-
-            <img
-                src="https://i.imghippo.com/files/XEvG6300bck.png"
-                alt="Collection One"
-            >
-
-            <div class="card-info">
-
-                <span>
-                    LSS / 001
-                </span>
-
-                <h3>
-                    Acronym Collection
-                </h3>
-
-                <a href="theacronymcollectionlss.html">
-                    VIEW PIECES →
-                </a>
-
-            </div>
-
+        <div class="collection-text">
+            <h2>MEN'S COLLECTION</h2>
+            <a href="#shop">SHOP MEN →</a>
         </div>
-
-
-        <!-- CARD 02 -->
-
-        <div class="card">
-
-            <img
-                src="https://i.imghippo.com/files/oIuf4358G.png"
-                alt="Collection Two"
-            >
-
-            <div class="card-info">
-
-                <span>
-                    LSS / 002
-                </span>
-
-                <h3>
-                    Denim Series
-                </h3>
-
-                <a href="theacronymcollectionlss.html">
-                    VIEW PIECES →
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- CARD 03 -->
-
-        <div class="card">
-
-            <img
-                src="https://i.imghippo.com/files/pe7861hi.png"
-                alt="Collection Three"
-            >
-
-            <div class="card-info">
-
-                <span>
-                    LSS / 003
-                </span>
-
-                <h3>
-                    Essentials
-                </h3>
-
-                <a href="theacronymcollectionlss.html">
-                    VIEW PIECES →
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- CARD 04 -->
-
-        <div class="card">
-
-            <img
-                src="https://i.imghippo.com/files/bz3640fbM.png"
-                alt="Collection Four"
-            >
-
-            <div class="card-info">
-
-                <span>
-                    LSS / 004
-                </span>
-
-                <h3>
-                    New Selection
-                </h3>
-
-                <a href="theacronymcollectionlss.html">
-                    VIEW PIECES →
-                </a>
-
-            </div>
-
-        </div>
-
     </div>
 
-</section>
+    <div class="collection" id="women">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=900"
+        alt="Women's collection">
+        <div class="collection-text">
+            <h2>WOMEN'S COLLECTION</h2>
+            <a href="#shop">SHOP WOMEN →</a>
+        </div>
+    </div>
 
+</div>
 
-<!-- =====================================================
-     STATEMENT
-====================================================== -->
+<!-- BRAND -->
 
-<section class="statement">
-
-    <span>
-        THE LSS IDENTITY
-    </span>
-
-    <h2>
-        LSS keeps a collection
-        <em>acronym collection.</em>
-    </h2>
-
-</section>
-
-
-<!-- =====================================================
-     NEWSLETTER
-====================================================== -->
-
-<section class="newsletter">
-
-    <h2>
-        Stay Connected
-    </h2>
+<section class="brand" id="about">
+    <h2>MORE THAN<br><span>JUST Premio Modder.</span></h2>
 
     <p>
-        Receive updates about new collections,
-        releases and selected pieces.
+        LSS stands for built around confidence, ambition and
+        individuality. We create clothing that makes
+        you feel good, look good and push beyond
+        your limits.
     </p>
 
-    <form class="email-box">
-
-        <input
-            type="email"
-            placeholder="YOUR EMAIL"
-            required
-        >
-
-        <button type="submit">
-            JOIN
-        </button>
-
-    </form>
-
+    <a href="#shop" class="btn">More →</a>
 </section>
 
+<!-- BENEFITS -->
 
-<!-- =====================================================
-     FOOTER
-====================================================== -->
+
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+    <div>
+        <h2>JOIN THE LSS COMMUNITY.</h2>
+        <p>Get exclusive offers, new releases and updates.</p>
+    </div>
+
+    <form onsubmit="event.preventDefault(); alert('Thanks for joining LSS!');">
+        <input type="email" placeholder="Email address" required>
+        <button type="submit">SUBSCRIBE</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
 
 <footer>
+    <div class="footer-content">
 
-    <div class="footer-top">
+      
 
-        <div class="footer-brand">
-            PREMIOMODDER LSS
+        <div>
+            <h3>SHOP</h3>
+            <a href="#shop">New Arrivals</a>
+            <a href="#men">Men</a>
+            <a href="#women">Women</a>
         </div>
 
+        <div>
+            <h3>HELP</h3>
+            <a href="#about">Contact</a>
+            <a href="#about">Shipping</a>
+            <a href="#about">Returns</a>
+        </div>
 
-        <div class="footer-links">
-
-            <div class="footer-column">
-
-                <span>
-                    NAVIGATE
-                </span>
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="collection.html">
-                    Collection
-                </a>
-
-                <a href="refundpage.html">
-                    About
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <span>
-                    INFORMATION
-                </span>
-
-                <a href="privacy.html">
-                    Privacy
-                </a>
-
-                <a href="refundpage.html">
-                    Returns
-                </a>
-
-                <a href="refundpage.html">
-                    Help
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <span>
-                    SOCIAL
-                </span>
-
-                <a href="#">
-                    Instagram
-                </a>
-
-                <a href="#">
-                    LinkedIn
-                </a>
-
-                <a href="#">
-                    Reddit
-                </a>
-
-            </div>
-
+        <div>
+            <h3>FOLLOW US</h3>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
         </div>
 
     </div>
-
 
     <div class="copyright">
-
-        © 2026 PREMIOMODDER LSS —
-        ALL RIGHTS RESERVED
-
+        © 2026 Premio Modder Fashion House . ALL RIGHTS RESERVED.
     </div>
-
 </footer>
 
+<script>
+let cartCount = 0;
+
+function addToBag() {
+    cartCount++;
+    document.getElementById("cart-count").textContent = cartCount;
+}
+</script>
 
 </body>
 </html>
-
-
-
 
